@@ -111,7 +111,7 @@ def main():
 	</style>
 	""", unsafe_allow_html=True)
 
-	st.markdown(f'<p class="big-font">Hasil Klasifikasi : {y_pred}</p>', unsafe_allow_html=True)
+	st.markdown(f'<p class="big-font">Student Adaptability Level Prediction : {y_pred}</p>', unsafe_allow_html=True)
 
 	
 if __name__ == '__main__':
