@@ -27,12 +27,6 @@ try:
         'Education Level',
         ('College', 'School', 'University')
     )
-    if educations == 'College':
-        education = 'College'
-    elif educations == 'School':
-        education = 'School'
-    else:
-        education = 'University'
         
     # institution = st.text_input('Masukkan Institution Type')
     institutions = st.radio(
@@ -96,10 +90,6 @@ try:
         'Internet Type',
         ('Mobile Data', 'Wifi')
     )
-    if Internets == 'Mobile Data':
-        Internet = 'Mobile Data'
-    else:
-        Internet = 'Wifi'
     
     # Network = st.text_input('Network Type')
     Network = 0
@@ -107,12 +97,6 @@ try:
         'Network Type',
         ('2G', '3G', '4G')
     )
-    if Networks == '2G':
-        Network = '2G'
-    elif Networks == '3G':
-        Network = '3G'
-    else:
-        Network = '4G'
     
     # Duration = st.text_input('Class Duration')
     Duration = 0
@@ -120,12 +104,6 @@ try:
         'Class Duration',
         ('1-3', '3-6', '0')
     )
-    if Durations == '1-3':
-        Duration = '1-3'
-    elif Durations == '3-6':
-        Duration = '3-6'
-    else:
-        Duration = '0'
         
     # lms = st.text_input('Self Lms')
     lms = 0
@@ -144,12 +122,6 @@ try:
         'Device',
         ('Mobile', 'Tab', 'Computer')
     )
-    if Devices == 'Mobile':
-        Device = 'Mobile'
-    elif Devices == 'Tab':
-        Device = 'Tab'
-    else:
-        Device = 'Computer'
     
     new_val = pd.DataFrame([[gender, age, education, institution, ITStudent, Location, LoadShedding, Financial, Internet, Network, Duration, lms, Device]])
 
@@ -178,13 +150,6 @@ try:
     </style>
     """, unsafe_allow_html=True)
 
-    if y_pred == 'High':
-        hasil = ('Tinggi')
-    elif y_pred == 'Low':
-        hasil = ('Rendah')
-    else:
-        hasil = ('Moderate')
-
-    st.markdown(f'<p class="big-font">Hasil Klasifikasi : {hasil}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="big-font">Hasil Klasifikasi : {y_pred}</p>', unsafe_allow_html=True)
 except:
     pass
