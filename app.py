@@ -1,10 +1,11 @@
+from logging import PlaceHolder
 import streamlit as st
 import pandas as pd
 import pickle
 
 dataset = pd.read_csv('DataPreparation.csv')
 
-st.title('students_adaptability_level_online_education')
+st.title('Students Adaptability Level Online Education')
 
 try:
     
@@ -42,47 +43,29 @@ try:
     ITStudent = 0
     ITStudents = st.radio(
         'IT Student',
-        ('Ya', 'Tidak')
+        ('Yes', 'No')
     )
-    if ITStudents == 'Ya':
-        ITStudent = 'Yes'
-    else:
-        ITStudent = 'No'
-        
+    
     # Location = st.text_input('Location')
     Location = 0
     Locations = st.radio(
         'Location',
-        ('Ya', 'Tidak')
+        ('Yes', 'No')
     )
-    if Locations == 'Ya':
-        Location = 'Yes'
-    else:
-        Location = 'No'
-        
+    
     # LoadShedding = st.text_input('Load Shedding')
     LoadShedding = 0
     LoadSheddings = st.radio(
         'Load Shedding',
-        ('Rendah', 'Tinggi')
+        ('Low', 'High')
     )
-    if Locations == 'Rendah':
-        Location = 'Low'
-    else:
-        Location = 'High'
-
+   
     # Financial = st.text_input('Financial Condition')
     Financial = 0
     Financials = st.radio(
         'Financial Condition',
-        ('Menengah', 'Miskin', 'Kaya')
+        ('Mid', 'Poor', 'Rich')
     )
-    if Financials == 'Menengah':
-        Financial = 'Mid'
-    elif Financials == 'Miskin':
-        Financial = 'Poor'
-    else:
-        Financial = 'Rich'
     
     # Internet = st.text_input('Internet Type')
     Internet = 0
@@ -109,19 +92,28 @@ try:
     lms = 0
     lmss = st.radio(
         'Self Lms',
-        ('Iya', 'Tidak')
+        ('Yes', 'No')
     )
-    if lmss == 'Iya':
-        lms = 'Yes'
-    else:
-        lms = 'No'  
-
+   
     # Device = st.text_input('Device')
     Device = 0
     Devices = st.radio(
         'Device',
         ('Mobile', 'Tab', 'Computer')
     )
+
+    st.markdown("""
+    <style>
+    .big-font {
+        font-size:30px !important;
+        text-align: center;
+        color: #270;
+        background-color: #DFF2BF;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f'<p class="big-font">Hasil Klasifikasi : {y_pred}</p>', unsafe_allow_html=True)
     
     new_val = pd.DataFrame([[gender, age, education, institution, ITStudent, Location, LoadShedding, Financial, Internet, Network, Duration, lms, Device]])
 
@@ -137,19 +129,6 @@ try:
 
 
     y_pred = svm_model.predict(new_val)
-
-
-    st.markdown("""
-    <style>
-    .big-font {
-        font-size:30px !important;
-        text-align: center;
-        color: #270;
-        background-color: #DFF2BF;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.markdown(f'<p class="big-font">Hasil Klasifikasi : {y_pred}</p>', unsafe_allow_html=True)
+    
 except:
     pass
