@@ -2,6 +2,7 @@ from logging import PlaceHolder
 import streamlit as st
 import pandas as pd
 import pickle
+import sklearn
 
 def main():
 	dataset = pd.read_csv('DataPreparation.csv')
