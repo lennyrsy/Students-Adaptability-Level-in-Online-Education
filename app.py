@@ -15,8 +15,10 @@ def main():
 	)
 
 	# age = st.text_input('Masukkan Umur')
-	ages = (st.text_input('Masukkan Umur', placeholder="Masukkan nilai dengan range 5 tahun sekali, contoh : 10-15"))
-	age = str(ages)
+	age = st.radio(
+			'Age',
+			('1-5', '6-10', '11-15', '16-20', '21-25', '26-30')
+	)
 	
 	# education = st.text_input('Masukkan Education Level')
 	educations = st.radio(
