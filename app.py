@@ -12,15 +12,11 @@ try:
     # gender = st.text_input('Masukkan Jenis Kelamin')
     genders = st.radio(
         'Jenis Kelamin',
-        ('Laki-Laki', 'Perempuan')
+        ('Boy', 'Girl')
     )
-    if genders == 'Boy':
-        gender = 'Boy'
-    else:
-        gender = 'Girl'
 
     # age = st.text_input('Masukkan Umur')
-    ages = (st.text_input('Masukkan Umur'))
+    ages = (st.text_input('Masukkan Umur', placeholder="Masukkan nilai dengan range 5 tahun sekali, contoh : 10-15"))
     age = str(ages)
     
     # education = st.text_input('Masukkan Education Level')
@@ -32,13 +28,9 @@ try:
     # institution = st.text_input('Masukkan Institution Type')
     institutions = st.radio(
         'Institution Type',
-        ('Bukan Pemerintah', 'Pemerintah')
+        ('Non Government', 'Government')
     )
-    if institutions == 'Bukan Pemerintah':
-        institution = 'Non Government'
-    else:
-        institution = 'Government' 
-
+   
     # ITStudent = st.text_input('Apakah IT Student')
     ITStudent = 0
     ITStudents = st.radio(
