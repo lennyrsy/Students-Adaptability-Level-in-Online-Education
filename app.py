@@ -110,9 +110,11 @@ def main():
 	}
 	</style>
 	""", unsafe_allow_html=True)
-
-	st.markdown(f'<p class="big-font">Student Adaptability Level Prediction : {y_pred}</p>', unsafe_allow_html=True)
-
+	
+	if st.button('PREDICT'):
+		st.markdown(f'<p class="big-font">Student Adaptability Level Prediction : {y_pred}</p>', unsafe_allow_html=True)
+	else:
+		pass
 	
 if __name__ == '__main__':
 	main()
